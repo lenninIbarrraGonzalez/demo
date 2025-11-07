@@ -1,26 +1,353 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   OINSTEC - Professional Theme System
+   Formato: HSL para máxima compatibilidad
+   ============================================ */
+
+/* Light Mode - Base Colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds & Surfaces */
+  --background: 0 0% 100%;           /* Pure white */
+  --foreground: 222 47% 11%;         /* Dark blue-gray */
+
+  --card: 0 0% 100%;                 /* White cards */
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Brand Colors */
+  --primary: 222 47% 11%;            /* Dark blue-gray for primary actions */
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 220 13% 95%;          /* Light gray for secondary elements */
+  --secondary-foreground: 222 47% 11%;
+
+  /* Utility Colors */
+  --muted: 220 13% 95%;              /* Muted backgrounds */
+  --muted-foreground: 220 9% 46%;    /* Muted text */
+
+  --accent: 220 13% 95%;             /* Accent backgrounds */
+  --accent-foreground: 222 47% 11%;
+
+  /* Semantic Colors */
+  --destructive: 0 84% 60%;          /* Red for destructive actions */
+  --destructive-foreground: 0 0% 100%;
+
+  --success: 142 76% 36%;            /* Green for success */
+  --success-foreground: 0 0% 100%;
+
+  --warning: 38 92% 50%;             /* Orange for warnings */
+  --warning-foreground: 0 0% 100%;
+
+  /* Status Colors - Solicitudes & Inspecciones */
+  --status-pending: 45 93% 90%;           /* Light yellow background */
+  --status-pending-fg: 45 86% 25%;        /* Dark yellow text */
+  --status-pending-border: 45 93% 60%;    /* Yellow border */
+
+  --status-assigned: 217 92% 92%;         /* Light blue background */
+  --status-assigned-fg: 217 91% 30%;      /* Dark blue text */
+  --status-assigned-border: 217 91% 60%;  /* Blue border */
+
+  --status-in-progress: 258 90% 92%;      /* Light purple background */
+  --status-in-progress-fg: 258 66% 30%;   /* Dark purple text */
+  --status-in-progress-border: 258 66% 60%; /* Purple border */
+
+  --status-completed: 142 76% 92%;        /* Light green background */
+  --status-completed-fg: 142 76% 25%;     /* Dark green text */
+  --status-completed-border: 142 76% 50%; /* Green border */
+
+  --status-rejected: 0 84% 92%;           /* Light red background */
+  --status-rejected-fg: 0 84% 30%;        /* Dark red text */
+  --status-rejected-border: 0 84% 60%;    /* Red border */
+
+  /* Borders & Inputs */
+  --border: 220 13% 91%;             /* Light gray borders */
+  --input: 220 13% 91%;              /* Input borders */
+  --ring: 222 47% 11%;               /* Focus ring color */
+
+  /* Charts */
+  --chart-1: 12 76% 61%;             /* Orange */
+  --chart-2: 173 58% 39%;            /* Teal */
+  --chart-3: 197 37% 24%;            /* Dark cyan */
+  --chart-4: 43 74% 66%;             /* Yellow */
+  --chart-5: 27 87% 67%;             /* Light orange */
+
+  /* Sidebar */
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-primary: 222 47% 11%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 220 13% 95%;
+  --sidebar-accent-foreground: 222 47% 11%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 222 47% 11%;
+
+  /* Layout */
+  --radius: 0.625rem;
+  --touch-target-min: 44px;
+  --spacing-touch: 1rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark Mode via Media Query */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Backgrounds & Surfaces */
+    --background: 222 47% 7%;          /* Very dark blue-gray */
+    --foreground: 0 0% 98%;            /* Off-white */
+
+    --card: 222 47% 10%;               /* Dark cards with blue tint */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Brand Colors */
+    --primary: 217 91% 60%;            /* Bright blue for dark mode */
+    --primary-foreground: 222 47% 7%;
+
+    --secondary: 222 47% 12%;          /* Slightly lighter than card */
+    --secondary-foreground: 0 0% 98%;
+
+    /* Utility Colors */
+    --muted: 222 47% 12%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 222 47% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Semantic Colors */
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 222 47% 7%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 7%;
+
+    /* Status Colors - Dark Mode */
+    --status-pending: 45 40% 25%;           /* Dark yellow */
+    --status-pending-fg: 45 93% 80%;        /* Light yellow text */
+    --status-pending-border: 45 70% 45%;
+
+    --status-assigned: 217 50% 25%;         /* Dark blue */
+    --status-assigned-fg: 217 92% 85%;
+    --status-assigned-border: 217 91% 60%;
+
+    --status-in-progress: 258 45% 25%;      /* Dark purple */
+    --status-in-progress-fg: 258 90% 85%;
+    --status-in-progress-border: 258 66% 60%;
+
+    --status-completed: 142 50% 25%;        /* Dark green */
+    --status-completed-fg: 142 76% 85%;
+    --status-completed-border: 142 76% 50%;
+
+    --status-rejected: 0 50% 25%;           /* Dark red */
+    --status-rejected-fg: 0 84% 85%;
+    --status-rejected-border: 0 84% 60%;
+
+    /* Borders & Inputs */
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 60%;
+
+    /* Charts - Dark Mode */
+    --chart-1: 258 90% 66%;            /* Purple */
+    --chart-2: 173 80% 40%;            /* Teal */
+    --chart-3: 27 87% 67%;             /* Orange */
+    --chart-4: 258 66% 56%;            /* Purple-pink */
+    --chart-5: 0 72% 57%;              /* Red */
+
+    /* Sidebar Dark */
+    --sidebar: 222 47% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 258 90% 66%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
+/* Dark Mode via Class (overrides media query) */
+.dark {
+  /* Backgrounds & Surfaces */
+  --background: 222 47% 7%;
+  --foreground: 0 0% 98%;
+
+  --card: 222 47% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 222 47% 8%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Brand Colors */
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 7%;
+
+  --secondary: 222 47% 12%;
+  --secondary-foreground: 0 0% 98%;
+
+  /* Utility Colors */
+  --muted: 222 47% 12%;
+  --muted-foreground: 220 9% 65%;
+
+  --accent: 222 47% 12%;
+  --accent-foreground: 0 0% 98%;
+
+  /* Semantic Colors */
+  --destructive: 0 63% 50%;
+  --destructive-foreground: 0 0% 98%;
+
+  --success: 142 71% 45%;
+  --success-foreground: 222 47% 7%;
+
+  --warning: 38 92% 50%;
+  --warning-foreground: 222 47% 7%;
+
+  /* Status Colors - Dark Mode */
+  --status-pending: 45 40% 25%;
+  --status-pending-fg: 45 93% 80%;
+  --status-pending-border: 45 70% 45%;
+
+  --status-assigned: 217 50% 25%;
+  --status-assigned-fg: 217 92% 85%;
+  --status-assigned-border: 217 91% 60%;
+
+  --status-in-progress: 258 45% 25%;
+  --status-in-progress-fg: 258 90% 85%;
+  --status-in-progress-border: 258 66% 60%;
+
+  --status-completed: 142 50% 25%;
+  --status-completed-fg: 142 76% 85%;
+  --status-completed-border: 142 76% 50%;
+
+  --status-rejected: 0 50% 25%;
+  --status-rejected-fg: 0 84% 85%;
+  --status-rejected-border: 0 84% 60%;
+
+  /* Borders & Inputs */
+  --border: 222 47% 18%;
+  --input: 222 47% 18%;
+  --ring: 217 91% 60%;
+
+  /* Charts */
+  --chart-1: 258 90% 66%;
+  --chart-2: 173 80% 40%;
+  --chart-3: 27 87% 67%;
+  --chart-4: 258 66% 56%;
+  --chart-5: 0 72% 57%;
+
+  /* Sidebar */
+  --sidebar: 222 47% 10%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 258 90% 66%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 222 47% 12%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 222 47% 18%;
+  --sidebar-ring: 217 91% 60%;
+}
+
+/* Tailwind Theme Mapping */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Status Colors */
+  --color-status-pending: hsl(var(--status-pending));
+  --color-status-pending-fg: hsl(var(--status-pending-fg));
+  --color-status-assigned: hsl(var(--status-assigned));
+  --color-status-assigned-fg: hsl(var(--status-assigned-fg));
+  --color-status-in-progress: hsl(var(--status-in-progress));
+  --color-status-in-progress-fg: hsl(var(--status-in-progress-fg));
+  --color-status-completed: hsl(var(--status-completed));
+  --color-status-completed-fg: hsl(var(--status-completed-fg));
+  --color-status-rejected: hsl(var(--status-rejected));
+  --color-status-rejected-fg: hsl(var(--status-rejected-fg));
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Sidebar */
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Charts */
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Base Styles */
+* {
+  border-color: hsl(var(--border));
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tablet-optimized touch targets (768px-1024px priority) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  button, a, input, select, textarea {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+  }
+}
+
+/* Base layer for Tailwind utilities */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
