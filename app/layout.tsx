@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OINSTEC - Plataforma de Inspección GNV",
+  title: "HOITSU - Plataforma de Inspección GNV",
   description: "Sistema de gestión de inspecciones de tanques de gas natural vehicular",
 };
 

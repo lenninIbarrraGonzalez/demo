@@ -183,7 +183,7 @@ export default function VisualizarInformePage() {
           <div className="border-b-4 border-[#2563eb] pb-6 mb-6">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-[#1e40af] mb-2">OINSTEC</h1>
+                <h1 className="text-3xl font-bold text-[#1e40af] mb-2">HOITSU</h1>
                 <p className="text-lg font-semibold">Informe de Inspección GNV</p>
               </div>
               <div className="text-right">
@@ -355,7 +355,7 @@ export default function VisualizarInformePage() {
             </div>
             <div className="text-center">
               <div className="border-t-2 border-black pt-2 mt-12">
-                <p className="font-semibold">OINSTEC</p>
+                <p className="font-semibold">HOITSU</p>
                 <p className="text-sm text-gray-600">Organismo de Inspección</p>
               </div>
             </div>
@@ -363,7 +363,7 @@ export default function VisualizarInformePage() {
 
           {/* Pie de página */}
           <div className="mt-12 text-center text-xs text-gray-500 border-t border-gray-300 pt-4">
-            <p>Este documento es un informe oficial generado por OINSTEC</p>
+            <p>Este documento es un informe oficial generado por HOITSU</p>
             <p>Fecha de generación: {new Date(informe.fechaGeneracion).toLocaleString('es-ES')}</p>
             <p className="mt-1">ID del informe: {informe.id}</p>
           </div>

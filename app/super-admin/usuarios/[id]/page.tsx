@@ -253,7 +253,7 @@ export default function EditarUsuarioPage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
-                      placeholder="juan.perez@oinstec.com"
+                      placeholder="juan.perez@hoitsu.com"
                       required
                       className="h-12 md:h-14"
                     />

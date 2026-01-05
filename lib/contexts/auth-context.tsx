@@ -9,6 +9,44 @@ import { Role } from '@/types';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/**
+ * Migra los emails de @oinstec.com a @hoitsu.com
+ */
+function migrateEmails() {
+  if (typeof window === 'undefined') return;
+
+  const dbKey = 'tanquesGas_db';
+  const data = localStorage.getItem(dbKey);
+  if (!data) return;
+
+  try {
+    const db = JSON.parse(data);
+    let needsUpdate = false;
+
+    // Migrar usuarios
+    if (db.usuarios) {
+      Object.keys(db.usuarios).forEach((key) => {
+        const usuario = db.usuarios[key];
+        if (usuario.email && usuario.email.includes('@oinstec.com')) {
+          usuario.email = usuario.email.replace('@oinstec.com', '@hoitsu.com');
+          needsUpdate = true;
+        }
+        if (usuario.apellido === 'OINSTEC') {
+          usuario.apellido = 'HOITSU';
+          needsUpdate = true;
+        }
+      });
+    }
+
+    if (needsUpdate) {
+      localStorage.setItem(dbKey, JSON.stringify(db));
+      console.log('Emails migrados de @oinstec.com a @hoitsu.com');
+    }
+  } catch (error) {
+    console.error('Error migrando emails:', error);
+  }
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +54,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     // Inicializar storage
     storage.initialize();
+
+    // Migrar emails de @oinstec.com a @hoitsu.com si existen
+    migrateEmails();
 
     // Seed database si no hay datos
     const talleres = storage.getAllTalleres();

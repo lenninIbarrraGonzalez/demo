@@ -7,7 +7,7 @@ export const ROLE_LABELS: Record<Role, string> = {
 };
 
 export const ROLE_DESCRIPTIONS: Record<Role, string> = {
-  [Role.SUPER_ADMIN]: 'Acceso total a la plataforma OINSTEC',
+  [Role.SUPER_ADMIN]: 'Acceso total a la plataforma HOITSU',
   [Role.TECNICO]: 'Realiza inspecciones asignadas',
   [Role.ADMIN_TALLER]: 'Gestiona vehículos y solicitudes del taller'
 };

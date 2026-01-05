@@ -29,8 +29,8 @@ export function seedDatabase() {
   // ============= SUPER ADMIN =============
   const superAdmin = storage.createUsuario({
     nombre: 'Admin',
-    apellido: 'OINSTEC',
-    email: 'admin@oinstec.com',
+    apellido: 'HOITSU',
+    email: 'admin@hoitsu.com',
     password: 'admin123', // En producción: usar bcrypt
     role: Role.SUPER_ADMIN,
     activo: true,
@@ -82,11 +82,11 @@ export function seedDatabase() {
     telefono: '+593 99 876 5432'
   });
 
-  // ============= TÉCNICOS OINSTEC =============
+  // ============= TÉCNICOS HOITSU =============
   const tecnico1 = storage.createUsuario({
     nombre: 'Juan',
     apellido: 'Pérez',
-    email: 'juan@oinstec.com',
+    email: 'juan@hoitsu.com',
     password: 'tecnico123',
     role: Role.TECNICO,
     activo: true,
@@ -96,7 +96,7 @@ export function seedDatabase() {
   const tecnico2 = storage.createUsuario({
     nombre: 'Ana',
     apellido: 'García',
-    email: 'ana@oinstec.com',
+    email: 'ana@hoitsu.com',
     password: 'tecnico123',
     role: Role.TECNICO,
     activo: true,
@@ -505,7 +505,7 @@ export function seedDatabase() {
   console.log('CREDENCIALES DE ACCESO:');
   console.log('');
   console.log('Super Admin:');
-  console.log('  Email: admin@oinstec.com');
+  console.log('  Email: admin@hoitsu.com');
   console.log('  Password: admin123');
   console.log('');
   console.log('Admin Taller 1 (AutoGas Express):');
@@ -517,11 +517,11 @@ export function seedDatabase() {
   console.log('  Password: taller123');
   console.log('');
   console.log('Técnico 1:');
-  console.log('  Email: juan@oinstec.com');
+  console.log('  Email: juan@hoitsu.com');
   console.log('  Password: tecnico123');
   console.log('');
   console.log('Técnico 2:');
-  console.log('  Email: ana@oinstec.com');
+  console.log('  Email: ana@hoitsu.com');
   console.log('  Password: tecnico123');
   console.log('---');
 

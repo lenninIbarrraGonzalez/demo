@@ -32,7 +32,7 @@ export const SUPER_ADMIN_NAV: NavSection[] = [
         icon: Building2,
       },
       {
-        title: 'Usuarios OINSTEC',
+        title: 'Usuarios HOITSU',
         href: '/super-admin/usuarios',
         icon: Users,
       },

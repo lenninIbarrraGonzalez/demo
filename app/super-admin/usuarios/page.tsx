@@ -21,7 +21,7 @@ export default function UsuariosPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const loadUsuarios = () => {
-    // Solo cargamos técnicos (Role.TECNICO) y usuarios OINSTEC
+    // Solo cargamos técnicos (Role.TECNICO) y usuarios HOITSU
     const data = storage.getAllUsuarios(Role.TECNICO);
     setUsuarios(data);
     setFilteredUsuarios(data);
@@ -63,14 +63,14 @@ export default function UsuariosPage() {
   const inactivosCount = usuarios.filter(u => !u.activo).length;
 
   return (
-    <DashboardLayout sections={SUPER_ADMIN_NAV} title="Usuarios OINSTEC">
+    <DashboardLayout sections={SUPER_ADMIN_NAV} title="Usuarios HOITSU">
       <div className="space-y-6 md:space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[hsl(var(--foreground))] flex items-center gap-3">
               <Users className="h-8 w-8 md:h-10 md:w-10" />
-              Usuarios OINSTEC
+              Usuarios HOITSU
             </h1>
             <p className="text-sm md:text-base text-[hsl(var(--muted-foreground))] mt-2">
               Gestiona los técnicos de inspección

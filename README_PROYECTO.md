@@ -1,4 +1,4 @@
-# OINSTEC - Plataforma SaaS Multi-Tenant de Inspección GNV
+# HOITSU - Plataforma SaaS Multi-Tenant de Inspección GNV
 
 Plataforma profesional para gestión de inspecciones de tanques de gas natural vehicular (GNV) con arquitectura multi-tenant.
 
@@ -24,7 +24,7 @@ Plataforma profesional para gestión de inspecciones de tanques de gas natural v
 - ✅ Sistema de autenticación completo con cookies
 - ✅ 3 Dashboards funcionales (Super Admin, Técnico, Taller)
 - ✅ CRUD completo de Talleres
-- ✅ CRUD completo de Usuarios OINSTEC (técnicos)
+- ✅ CRUD completo de Usuarios HOITSU (técnicos)
 - ✅ CRUD completo de Vehículos y Cilindros
 - ✅ Sistema de Solicitudes (crear, listar, asignar técnico, programar)
 - ✅ Constructor de formularios dinámicos visual
@@ -82,18 +82,18 @@ npm start
 
 ## 👥 Usuarios de Demostración
 
-### Super Administrador (OINSTEC)
-- **Email:** admin@oinstec.com
+### Super Administrador (HOITSU)
+- **Email:** admin@hoitsu.com
 - **Password:** admin123
 - **Permisos:** Acceso total, gestión de talleres, usuarios, formularios, asignación de técnicos
 
-### Técnico 1 (OINSTEC)
-- **Email:** juan@oinstec.com
+### Técnico 1 (HOITSU)
+- **Email:** juan@hoitsu.com
 - **Password:** tecnico123
 - **Permisos:** Ver asignaciones, realizar inspecciones
 
-### Técnico 2 (OINSTEC)
-- **Email:** ana@oinstec.com
+### Técnico 2 (HOITSU)
+- **Email:** ana@hoitsu.com
 - **Password:** tecnico123
 
 ### Admin Taller 1 - AutoGas Express

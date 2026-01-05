@@ -55,7 +55,7 @@ export default function LoginPage() {
         {/* Logo y título */}
         <div className="text-center space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold text-[hsl(var(--foreground))]">
-            OINSTEC
+            HOITSU
           </h1>
           <p className="text-[hsl(var(--muted-foreground))] text-sm md:text-base">
             Plataforma de Inspección de Tanques GNV
@@ -124,12 +124,12 @@ export default function LoginPage() {
               type="button"
               variant="outline"
               className="w-full justify-start h-12 md:h-14 text-sm md:text-base" // Tablet-optimized
-              onClick={() => handleQuickLogin('admin@oinstec.com', 'admin123')}
+              onClick={() => handleQuickLogin('admin@hoitsu.com', 'admin123')}
             >
               <div className="flex flex-col items-start">
                 <span className="font-semibold">Super Administrador</span>
                 <span className="text-xs text-[hsl(var(--muted-foreground))]">
-                  admin@oinstec.com
+                  admin@hoitsu.com
                 </span>
               </div>
             </Button>
@@ -166,12 +166,12 @@ export default function LoginPage() {
               type="button"
               variant="outline"
               className="w-full justify-start h-12 md:h-14 text-sm md:text-base"
-              onClick={() => handleQuickLogin('juan@oinstec.com', 'tecnico123')}
+              onClick={() => handleQuickLogin('juan@hoitsu.com', 'tecnico123')}
             >
               <div className="flex flex-col items-start">
                 <span className="font-semibold">Técnico 1</span>
                 <span className="text-xs text-[hsl(var(--muted-foreground))]">
-                  juan@oinstec.com
+                  juan@hoitsu.com
                 </span>
               </div>
             </Button>
@@ -180,7 +180,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-xs md:text-sm text-[hsl(var(--muted-foreground))]">
-          © 2024 OINSTEC. Todos los derechos reservados.
+          © 2024 HOITSU. Todos los derechos reservados.
         </p>
       </div>
     </div>

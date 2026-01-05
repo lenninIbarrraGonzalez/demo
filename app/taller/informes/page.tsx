@@ -80,7 +80,7 @@ export default function InformesTallerPage() {
             Informes Recibidos
           </h1>
           <p className="text-sm md:text-base text-[hsl(var(--muted-foreground))] mt-2">
-            Informes de inspección generados por OINSTEC para tus vehículos
+            Informes de inspección generados por HOITSU para tus vehículos
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export default function InformesTallerPage() {
                   {searchTerm ? 'No se encontraron informes' : 'No tienes informes generados aún'}
                 </p>
                 <p className="text-sm text-[hsl(var(--muted-foreground))] mt-2">
-                  Los informes aparecerán aquí una vez que OINSTEC complete las inspecciones
+                  Los informes aparecerán aquí una vez que HOITSU complete las inspecciones
                 </p>
               </div>
             ) : (

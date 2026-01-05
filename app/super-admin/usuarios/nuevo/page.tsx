@@ -105,7 +105,7 @@ export default function NuevoUsuarioPage() {
           <div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[hsl(var(--foreground))] flex items-center gap-3">
               <UserPlus className="h-8 w-8 md:h-10 md:w-10" />
-              Nuevo Usuario OINSTEC
+              Nuevo Usuario HOITSU
             </h1>
             <p className="text-sm md:text-base text-[hsl(var(--muted-foreground))] mt-2">
               Registra un nuevo técnico de inspección
@@ -165,7 +165,7 @@ export default function NuevoUsuarioPage() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
-                      placeholder="juan.perez@oinstec.com"
+                      placeholder="juan.perez@hoitsu.com"
                       required
                       className="h-12 md:h-14"
                     />

@@ -51,11 +51,11 @@ export function Sidebar({ sections, isOpen, onClose }: SidebarProps) {
           <div className="flex h-16 md:h-20 items-center justify-between border-b border-[hsl(var(--border))] px-4 md:px-6">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-bold text-base">
-                O
+                H
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-[hsl(var(--foreground))]">
-                  OINSTEC
+                  HOITSU
                 </h2>
                 <p className="text-xs text-[hsl(var(--muted-foreground))]">
                   Inspección GNV
@@ -126,7 +126,7 @@ export function Sidebar({ sections, isOpen, onClose }: SidebarProps) {
           {/* Footer */}
           <div className="border-t border-[hsl(var(--border))] p-4 md:p-6">
             <p className="text-xs text-center text-[hsl(var(--muted-foreground))]">
-              © 2024 OINSTEC
+              © 2024 HOITSU
             </p>
           </div>
         </div>

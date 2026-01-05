@@ -66,7 +66,7 @@ export default function SuperAdminDashboard() {
             Dashboard
           </h1>
           <p className="text-sm md:text-base text-[hsl(var(--muted-foreground))] mt-2">
-            Vista general de la plataforma OINSTEC
+            Vista general de la plataforma HOITSU
           </p>
         </div>
 

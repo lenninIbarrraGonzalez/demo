@@ -28,11 +28,11 @@ export function Navbar({ onMenuClick, title }: NavbarProps) {
         {/* Logo y título */}
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-lg bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-bold text-sm md:text-base">
-            O
+            H
           </div>
           <div className="hidden sm:block">
             <h1 className="text-lg md:text-xl font-semibold text-[hsl(var(--foreground))]">
-              {title || 'OINSTEC'}
+              {title || 'HOITSU'}
             </h1>
           </div>
         </div>
